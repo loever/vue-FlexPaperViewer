@@ -1,0 +1,90 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- FlexPaperViewer flash version debug template -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	<title>FlexPaper</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css" media="screen">
+		html,
+		body {
+			height: 100%;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: auto;
+		}
+
+		#flashContent {
+			display: none;
+		}
+	</style>
+
+	<script type="text/javascript" src="./flash/flexpaper_flash2.js"></script>
+	<script type="text/javascript" src="./flash/jquery.js"></script>
+
+</head>
+
+<body>
+	<div style="position:absolute;left:10px;top:10px;">
+		<a id="viewerPlaceHolder" style="width:730px;height:480px;display:block"></a>
+		
+		<script type="text/javascript">
+		
+			var fp = new FlexPaperViewer(
+				'./FlexPaperViewer',  // 这个放文件地址   如果是url 远程地址  需要把FlexPaperViewer插件 放到服务器  这里也是服务器地址  如果需要跨域的话 让后台配置一下 crossdomain.xml   
+				'viewerPlaceHolder', {
+					config: {
+						SwfFile: './nihao.swf', //应该打开flash文档FlowPaper 地址   
+						Scale: 0.6, //
+						ZoomTransition: 'easeOut', //放大FlowPaper时应使用的缩放过渡。它使用与Tweener相同的Transition模式。默认值为easeOut。一些例子：easynone，easeout，linear，easeoutquad
+						ZoomTime: 0.5, //	缩放达到新缩放系数所需的时间。应该是0或更大。
+						ZoomInterval: 0.2, //缩放滑块应使用的间隔。基本上每个缩放系数之间的“步长”应该有多大。默认值为0.1。应该是一个正数。
+						FitPageOnLoad: true, //在初始加载时适合页面。与使用工具栏中的fit-page按钮效果相同。
+						FitWidthOnLoad: false, //	适合初始载荷时的宽度。与使用工具栏中的适合宽度按钮效果相同。
+						PrintEnabled: true,  //
+						FullScreenAsMaxWindow: false, //设置为true后，单击全屏将打开一个新的浏览器窗口，FlowPaper最大化而不是使用真正的全屏。当使用FlowPaper作为独立闪存时，这是首选设置，因为Flash播放器的安全限制会禁用（出于安全考虑）真正全屏的大多数输入控件。
+						ProgressiveLoading: false,   //	将设置为true时将逐步加载和显示文档，而不是在显示页面之前下载完整文档。文档需要至少转换为Flash版本9才能生效（-T 9标记使用PDF2SWF）。请注意，此参数在FlowPaper Zine中无效。请在FlowPaper Zine中使用拆分页面加载大型文档。
+						MinZoomSize: 0.2, 	//设置允许的最大缩放级别
+						MaxZoomSize: 5,   //设置允许的最小缩放级别
+						SearchMatchAll: false, //设置为true时，查看器会在文档中执行搜索时突出显示所有匹配项。
+						InitViewMode: 'Portrait', //设置启动视图模式。例如“Portrait”或“TwoPage”。
+
+						ViewModeToolsVisible: true, //显示或隐藏工具栏中的缩放工具
+						ZoomToolsVisible: true,  //	显示或隐藏工具栏中的缩放工具
+						NavToolsVisible: true, //	显示或隐藏工具栏中的导航工具
+						CursorToolsVisible: true, //	显示或隐藏工具栏中的光标工具
+						SearchToolsVisible: true, //显示或隐藏工具栏中的搜索工具
+
+						localeChain: 'en_US' //设置要使用的区域设置（语言）。目前支持以下语言：
+						// EN_US（ 英文）
+						 // fr_FR时（ 法国）
+						 //zh_CN的（ 中国， 简单）
+						 //es_ES（ 西班牙语）
+						 //pt_BR表示（ 巴西葡萄牙语）
+						 //ru_RU（ 俄罗斯）
+						 //fi_FN（ 芬兰）
+						//de_DE这个（ 德国）
+						//nl_NL（ 荷兰）
+						//tr_TR（ 土耳其）
+						//se_SE（ 瑞典）
+						//PT_PT（ 葡萄牙语）
+						//el_EL（ 希腊语）
+						//dn_DN（ 丹麦语）
+						//cz_CS（ 捷克语）
+						//it_IT（ 意大利语）
+						//pl_PL（ 波兰语）
+						//pv_FN（ 芬兰语）
+						//hu_HU（ 匈牙利语）
+
+					}
+				});
+		</script>
+	</div>
+
+</body>
+
+</html>
